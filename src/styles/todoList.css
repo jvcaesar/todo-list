@@ -1,0 +1,137 @@
+.todo-list {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo-item {
+    margin: 10px 20px 10px 20px;
+    width: 800px;
+    /* border: 1px solid red; */
+}
+.todo-item-content {
+    display: flex;
+    align-items: center;
+}
+.todo-title {
+    width: 500px;
+    background-color: #657786;
+    padding: 10px 0 10px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.todo-date {
+    width: 150px;
+    background-color: #aab8c2;
+    padding: 10px 0 10px 20px;
+    color: black;
+}
+.todo-status {
+    width: 150px;
+    padding: 10px 0 10px 30px;
+}
+
+@media screen 
+    and (max-width: 920px) {
+    .add-new-button {
+        margin: 0 0 20px 0;
+    }
+    .todo-item {
+        width: 700px;
+    }
+    .modal-call {
+        display: flex;
+        justify-content: center;
+    }
+    .todo-title {
+        width: 400px;
+    }
+    .todo-date, .todo-status {
+        width: 150px;
+    }
+}
+@media screen 
+    and (max-width: 800px) {
+    .todo-item {
+        width: 600px;
+    }
+    .todo-title {
+        width: 350px;
+    }
+    .todo-date, .todo-status {
+        width: 120px;
+    }
+}
+@media screen 
+    and (max-width: 620px) {
+    .todo-item {
+        width: 520px;
+    }
+    .todo-title {
+        width: 280px;
+    }
+    .todo-date, .todo-status {
+        width: 110px;
+        padding-left: 10px;
+    }
+}
+@media screen 
+    and (max-width: 540px) {
+    :root {
+        --modal-width: 300px;
+    }
+    .main-title {
+        font-size: 24px;
+    }
+    .add-new-button {
+        padding: 10px 20px;
+    }
+    .todo-item {
+        width: 350px;
+        font-size: 12px;
+    }
+    .todo-title {
+        width: 190px;
+    }
+    .todo-date {
+        width: 80px;
+        padding-left: 5px;
+    }
+    .todo-status {
+        width: 80px;
+        padding-left: 10px;
+    }
+    .modal {
+        width: var(--modal-width);
+        left: calc(50vw - var(--modal-width) / 2);
+        padding: 10px 0;
+    }
+    .modal-title {
+        margin: 0px;
+    }
+    .modal-title input {
+        width: var(--modal-width) - 10px;
+        padding: 8px 8px;
+        font-size: 14px;
+    }
+    .modal-select {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-datepicker label {
+        margin-left: 10px;
+    }
+    .modal-datepicker .datepicker {
+        width: 120px;
+        margin: 20px 0 0 0;
+    }
+    .modal-status {
+        display: flex;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .modal-status label {
+        margin: 23px 0px 0 0;
+    }
+}

@@ -1,0 +1,124 @@
+:root {
+    --modal-width: 500px;
+}
+.hide {
+    opacity: 0;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+.modal {
+    /* width: 500px; */
+    width: var(--modal-width);
+    height: 270px;
+    position: absolute;
+    top: calc(50vh - 250px);
+    left: calc(50vw - var(--modal-width) / 2);
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #ffca3a;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 3px;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+.modal .x-cancel {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #0000003a;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.562);
+    background-color: pink;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+.modal-content h3 {
+    display: flex;
+    justify-content: center;
+}
+.modal-title {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.modal-title label {
+    margin: 0 10px;
+}
+.modal-title input {
+    width: 420px;
+    padding: 10px 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0.2px solid rgb(170, 170, 170);
+}
+.modal-select {
+    display: flex;
+}
+.modal-datepicker {
+    display: flex;
+}
+.modal-datepicker label {
+    margin: 23px 10px 0 20px;
+}
+.modal-datepicker .datepicker {
+    width: 120px;
+    margin: 20px 0;
+    height: 30px;
+    font-size: 14px;
+    padding: 1px 0 1px 22px;
+    border-radius: 5px;
+    border: 0.2px solid rgb(170, 170, 170);
+}
+.modal-status {
+    display: flex;
+    margin-left: 20px;
+}
+.modal-status label {
+    margin: 23px 0px 0 0;
+}
+.select-status {
+    width: 150px;
+    padding: 5px 0 5px 10px;
+    margin: 20px 20px 0 10px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 0.2px solid rgb(170, 170, 170);
+}
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+    margin: 10px 20px;
+}
+.modal-buttons button {
+    width: 100px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0.2px solid rgb(170, 170, 170);
+}
+.modal-buttons .cancel {
+    background-color: grey;
+}
+.modal-buttons .add {
+    background-color: #0077db;
+}

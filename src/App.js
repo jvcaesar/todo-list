@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import ShowTodoList from './components/ShowTodoList';
+import CallTodoModal from './components/CallTodoModal';
 
-function App() {
+// Main App for the Todo project
+const App = () => {
+  // setting states for the entire todo list and for a new todo item
+  const [todoList, setTodoList] = useState([])
+  const [newTodo, setNewTodo] = useState({
+    id: '',
+    title: '',
+    deadline: '',
+    status: ''
+  })
+
+  // Adds a new todo item to the list when the new item state is updated
+  useEffect(() => {
+    if (newTodo.title) {
+      const newTodos = [...todoList]
+      newTodos.push(newTodo)
+      setTodoList(newTodos)
+      setNewTodo('')
+    }
+  }, [newTodo])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+
+      <h1 className="main-title">Todo Project for Integrify</h1>
+
+      {/* Get a new todo item */}
+      <CallTodoModal todoItem={false} setNewTodo={setNewTodo} />
+
+      {/* Display the list of todo items */}
+      <ShowTodoList todoList={todoList} setTodoList={setTodoList} />
+
     </div>
   );
 }
